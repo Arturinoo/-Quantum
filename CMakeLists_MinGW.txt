@@ -1,0 +1,56 @@
+cmake_minimum_required(VERSION 3.15)
+project(QuantumEngine VERSION 0.1.0 LANGUAGES CXX CUDA)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CUDA_STANDARD 17)
+set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+
+# Nájdenie CUDA
+find_package(CUDA REQUIRED)
+
+# Nájdenie OpenMP
+find_package(OpenMP REQUIRED)
+
+# Hlavný executable
+add_executable(quantum_engine
+    src/core/engine.cpp
+    src/classical/classical_engine.cpp
+    src/quantum/quantum_engine.cu
+    src/hybrid/hybrid_engine.cpp
+)
+
+# CUDA architektúra pre RTX 4060
+set_target_properties(quantum_engine PROPERTIES
+    CUDA_ARCHITECTURES "86"
+)
+
+# Linkovanie
+target_link_libraries(quantum_engine
+    ${CUDA_LIBRARIES}
+    ${OpenMP_CXX_LIBRARIES}
+    cudart_static
+)
+
+# Cesty
+target_include_directories(quantum_engine PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CUDA_INCLUDE_DIRS}
+)
+
+# Kompilačné flagy pre MinGW
+target_compile_options(quantum_engine PRIVATE
+    -O3
+    -march=native
+    -fopenmp
+    -Wall
+    -Wextra
+)
+
+# CUDA flagy
+target_compile_options(quantum_engine PRIVATE
+    $<$<COMPILE_LANGUAGE:CUDA>:-arch=sm_86>
+    $<$<COMPILE_LANGUAGE:CUDA>:-O3>
+    $<$<COMPILE_LANGUAGE:CUDA>:--compiler-options -fopenmp>
+)

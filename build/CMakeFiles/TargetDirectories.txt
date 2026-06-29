@@ -1,0 +1,3 @@
+/home/preo/quantum_engine/build/CMakeFiles/quantum_engine.dir
+/home/preo/quantum_engine/build/CMakeFiles/edit_cache.dir
+/home/preo/quantum_engine/build/CMakeFiles/rebuild_cache.dir
