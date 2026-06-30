@@ -47,7 +47,6 @@ int main() {
     int frame = 0;
     auto start = std::chrono::high_resolution_clock::now();
     int inspectorUpdateCounter = 0;
-    bool godModeActive = false;
     float flySpeed = 0.2f;
     
     const int targetFPS = 60;
@@ -68,7 +67,6 @@ int main() {
                 int idx = gui.selectedParticleIndex;
                 if (godIdx >= 0) engine.releaseGodParticle();
                 engine.setGodParticle(idx);
-                godModeActive = true;
                 gui.followParticle = true;
                 std::cout << "🌟 GOD PARTICLE ACTIVATED on particle " << idx << std::endl;
             }
@@ -77,70 +75,17 @@ int main() {
         if (glfwGetKey(win, GLFW_KEY_R) == GLFW_PRESS) {
             if (godIdx >= 0) {
                 engine.releaseGodParticle();
-                godModeActive = false;
                 std::cout << "🌟 GOD PARTICLE RELEASED" << std::endl;
             }
         }
         
-        // ============================================================
-        // LIETANIE GOD PARTICLE – V SMERE KAMERY
-        // ============================================================
+        // LIETANIE GOD PARTICLE
         if (godIdx >= 0) {
             float speed = flySpeed;
             float dx = 0, dy = 0, dz = 0;
             bool moved = false;
             
-            // Získame smer kamery z renderera
-            // cameraTarget je bod, kam sa kamera pozerá (v našom prípade God Particle)
-            // cameraPos je pozícia kamery
-            // Smer = normalizovaný vektor z cameraPos do cameraTarget
-            
-            // Získame pozíciu God Particle (čo je cameraTarget)
-            float gx = engine.getParticleX(godIdx);
-            float gy = engine.getParticleY(godIdx);
-            float gz = engine.getParticleZ(godIdx);
-            
-            // cameraPos je v rendereri, ale nemáme priamy prístup
-            // Použijeme jednoduchý trik: smer kamery je daný rotáciou
-            // Získame ho z cameraDistance a uhlov (približne)
-            // Alebo jednoduchšie: použijeme view direction z renderera
-            
-            // Predpokladáme, že kamera je na osi Z a pozerá sa na God Particle
-            // Pre jednoduchosť použijeme forward = (0, 0, -1) a potom rotujeme
-            
-            // Vypočítame smer z pozície kamery k God Particle
-            // cameraPos = cameraTarget + cameraDistance * (0, 0, 1) v lokálnych súradniciach
-            // Keďže nemáme prístup k maticiam, použijeme jednoduchý prístup:
-            // Smer = normalizované (GodParticle - CameraPos)
-            // cameraTarget = GodParticle, takže smer = (0, 0, -1) v kamerovom priestore
-            
-            // Jednoduché riešenie: forward = -Z v smere kamery
-            // To je (0, 0, -1) v kamerovom priestore
-            // V svetových súradniciach to je (sin(theta)*cos(phi), sin(phi), cos(theta)*cos(phi))
-            // Použijeme uhly z renderera (ak máme prístup)
-            
-            // Pre jednoduchosť použijeme fixed forward (0, 0, -1)
-            // a potom ho natočíme podľa toho, kam sa pozeráme
-            // Získame uhly z renderera cez getCameraAngles()
-            
-            // Dočasné riešenie: forward = (0, 0, -1) v kamerovom priestore
-            // Potrebujeme ho previesť do svetových súradníc
-            // Použijeme view matrix z renderera (ak máme prístup)
-            
-            // Najjednoduchšie: forward v smere kamery = (0, 0, -1)
-            // a aplikujeme rotáciu podľa kamery
-            // Získame uhly z renderera (približne)
-            float forwardX = 0.0f;
-            float forwardY = 0.0f;
-            float forwardZ = -1.0f;
-            
-            // Získame cameraAngleX a cameraAngleY z renderera
-            // Ak nemáme prístup, použijeme default
-            // Našiel som riešenie: renderer má cameraAngleX a cameraAngleY
-            // Ale sú private, takže použijeme getter (ak existuje)
-            
-            // Jednoduché riešenie: použijeme default forward a necháme to tak
-            // Neskôr to vylepšíme
+            float forwardX = 0, forwardY = 0, forwardZ = -1.0f;
             
             bool spacePressed = glfwGetKey(win, GLFW_KEY_SPACE) == GLFW_PRESS;
             bool shiftPressed = glfwGetKey(win, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS || 
@@ -189,7 +134,6 @@ int main() {
             
             if (glfwGetKey(win, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
                 engine.releaseGodParticle();
-                godModeActive = false;
                 std::cout << "🌟 GOD PARTICLE RELEASED" << std::endl;
             }
         }
@@ -224,7 +168,7 @@ int main() {
             }
             if (godIdx >= 0) {
                 engine.releaseGodParticle();
-                godModeActive = false;
+                std::cout << "🌟 GOD PARTICLE RELEASED" << std::endl;
             }
         }
         
@@ -359,7 +303,7 @@ int main() {
         
         gui.newFrame();
         gui.update(stats);
-        gui.drawParticleInspector();
+        gui.drawParticleInspector();  // <-- LEN RAZ!
         gui.render();
         
         frame++;

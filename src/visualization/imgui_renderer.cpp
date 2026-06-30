@@ -94,9 +94,7 @@ void ImGuiRenderer::render() {
     drawTimeControlsPanel();
     drawTimelinePanel();
     drawStatsPanel();
-    
-    // IBA RAZ voláme drawParticleInspector()
-    drawParticleInspector();
+    drawParticleInspector(); // <-- IBA RAZ
     
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -156,11 +154,7 @@ void ImGuiRenderer::drawTimeControlsPanel() {
 }
 
 void ImGuiRenderer::drawParticleInspector() {
-    // STATICKÝ COUNTER – aby sme videli, koľkokrát sa volá
-    static int callCount = 0;
-    callCount++;
-    std::cout << "   🟢 drawParticleInspector() call #" << callCount << std::endl;
-    
+    // JEDEN BEGIN – IBA RAZ!
     ImGui::SetNextWindowSize(ImVec2(350, 450), ImGuiCond_FirstUseEver);
     ImGui::SetNextWindowPos(ImVec2(370, 620), ImGuiCond_FirstUseEver);
     
@@ -169,6 +163,7 @@ void ImGuiRenderer::drawParticleInspector() {
         return;
     }
     
+    // OBSAH – IBA RAZ!
     if (selectedParticleIndex < 0) {
         ImGui::Text("🔍 No particle selected");
         ImGui::Text("Press 'F11' and click a particle");
