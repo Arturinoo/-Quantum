@@ -87,6 +87,10 @@ void ImGuiRenderer::update(const SimulationStats& stats) {
 void ImGuiRenderer::render() {
     if (!initialized) return;
     
+    static int renderCallCount = 0;
+    renderCallCount++;
+    std::cout << "🔍 DEBUG render() call #" << renderCallCount << std::endl;
+    
     drawMainMenu();
     drawToolPanel();
     drawInfoPanel();
@@ -94,7 +98,9 @@ void ImGuiRenderer::render() {
     drawTimeControlsPanel();
     drawTimelinePanel();
     drawStatsPanel();
-    drawParticleInspector(); // <-- IBA RAZ
+    
+    std::cout << "🔍 DEBUG Calling drawParticleInspector() from render()" << std::endl;
+    drawParticleInspector();
     
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -154,17 +160,24 @@ void ImGuiRenderer::drawTimeControlsPanel() {
 }
 
 void ImGuiRenderer::drawParticleInspector() {
-    // JEDEN BEGIN – IBA RAZ!
+    static int inspectorCallCount = 0;
+    inspectorCallCount++;
+    std::cout << "🔍 DEBUG drawParticleInspector() call #" << inspectorCallCount << std::endl;
+    std::cout << "🔍 DEBUG selectedParticleIndex = " << selectedParticleIndex << std::endl;
+    
     ImGui::SetNextWindowSize(ImVec2(350, 450), ImGuiCond_FirstUseEver);
     ImGui::SetNextWindowPos(ImVec2(370, 620), ImGuiCond_FirstUseEver);
     
+    std::cout << "🔍 DEBUG Calling ImGui::Begin(\"Particle Inspector\")" << std::endl;
     if (!ImGui::Begin("Particle Inspector", nullptr)) {
+        std::cout << "🔍 DEBUG ImGui::Begin() returned false" << std::endl;
         ImGui::End();
         return;
     }
+    std::cout << "🔍 DEBUG ImGui::Begin() succeeded" << std::endl;
     
-    // OBSAH – IBA RAZ!
     if (selectedParticleIndex < 0) {
+        std::cout << "🔍 DEBUG No particle selected" << std::endl;
         ImGui::Text("🔍 No particle selected");
         ImGui::Text("Press 'F11' and click a particle");
         
@@ -173,6 +186,7 @@ void ImGuiRenderer::drawParticleInspector() {
             std::cout << "Selected particle: " << selectedParticleIndex << std::endl;
         }
     } else {
+        std::cout << "🔍 DEBUG Particle #" << selectedParticleIndex << " selected" << std::endl;
         ImGui::Text("🔬 Particle #%d", selectedParticleIndex);
         ImGui::Separator();
         
@@ -232,7 +246,9 @@ void ImGuiRenderer::drawParticleInspector() {
         }
     }
     
+    std::cout << "🔍 DEBUG Calling ImGui::End()" << std::endl;
     ImGui::End();
+    std::cout << "🔍 DEBUG drawParticleInspector() finished" << std::endl;
 }
 
 void ImGuiRenderer::drawMainMenu() {

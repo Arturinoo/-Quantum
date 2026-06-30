@@ -7,13 +7,14 @@
 #include "core/engine.h"
 #include "visualization/opengl_renderer.h"
 #include "visualization/imgui_renderer.h"
+#include "imgui.h"
 
 using namespace QuantumEngine;
 
 int main() {
     std::cout << "\n========================================" << std::endl;
-    std::cout << "     QUANTUM ENGINE v1.5.0           " << std::endl;
-    std::cout << "        (God Flight - Camera)        " << std::endl;
+    std::cout << "     QUANTUM ENGINE v1.6.0           " << std::endl;
+    std::cout << "        (God Flight Fixed)           " << std::endl;
     std::cout << "========================================\n" << std::endl;
     
     Engine engine;
@@ -23,7 +24,7 @@ int main() {
     }
     
     OpenGLRenderer renderer;
-    if (!renderer.initialize(1280, 720, "Quantum Engine - God Flight")) {
+    if (!renderer.initialize(1280, 720, "Quantum Engine - God Flight Fixed")) {
         std::cerr << "ERROR: Renderer init failed!" << std::endl;
         return 1;
     }
@@ -48,6 +49,7 @@ int main() {
     auto start = std::chrono::high_resolution_clock::now();
     int inspectorUpdateCounter = 0;
     float flySpeed = 0.2f;
+    static int newParticleCount = 5000;
     
     const int targetFPS = 60;
     const std::chrono::milliseconds frameDuration(1000 / targetFPS);
@@ -84,26 +86,28 @@ int main() {
             float speed = flySpeed;
             float dx = 0, dy = 0, dz = 0;
             bool moved = false;
-            
-            float forwardX = 0, forwardY = 0, forwardZ = -1.0f;
-            
+
+            glm::vec3 camPos = renderer.getCameraPos();
+            glm::vec3 camTarget = renderer.getCameraTarget();
+            glm::vec3 forward = glm::normalize(camTarget - camPos);
+
             bool spacePressed = glfwGetKey(win, GLFW_KEY_SPACE) == GLFW_PRESS;
-            bool shiftPressed = glfwGetKey(win, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS || 
-                               glfwGetKey(win, GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS;
-            
+            bool shiftPressed = glfwGetKey(win, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS ||
+                                glfwGetKey(win, GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS;
+
             if (spacePressed) {
-                dx += forwardX * speed;
-                dy += forwardY * speed;
-                dz += forwardZ * speed;
+                dx += forward.x * speed;
+                dy += forward.y * speed;
+                dz += forward.z * speed;
                 moved = true;
             }
             if (shiftPressed) {
-                dx -= forwardX * speed;
-                dy -= forwardY * speed;
-                dz -= forwardZ * speed;
+                dx -= forward.x * speed;
+                dy -= forward.y * speed;
+                dz -= forward.z * speed;
                 moved = true;
             }
-            
+
             if (glfwGetKey(win, GLFW_KEY_Q) == GLFW_PRESS) {
                 dy += speed * 0.5f;
                 moved = true;
@@ -112,7 +116,7 @@ int main() {
                 dy -= speed * 0.5f;
                 moved = true;
             }
-            
+
             if (moved) {
                 float len = sqrt(dx*dx + dy*dy + dz*dz);
                 if (len > 0) {
@@ -138,12 +142,15 @@ int main() {
             }
         }
         
-        // FOLLOW – kamera sleduje God Particle
-        if (godIdx >= 0 && gui.followParticle) {
-            float gx = engine.getParticleX(godIdx);
-            float gy = engine.getParticleY(godIdx);
-            float gz = engine.getParticleZ(godIdx);
-            renderer.setCameraTarget(gx, gy, gz);
+        // FOLLOW
+        if (gui.followParticle && 
+            gui.selectedParticleIndex >= 0 && 
+            gui.selectedParticleIndex < engine.get_particle_count()) {
+            int idx = gui.selectedParticleIndex;
+            float px = engine.getParticleX(idx);
+            float py = engine.getParticleY(idx);
+            float pz = engine.getParticleZ(idx);
+            renderer.setCameraTarget(px, py, pz);
         }
         
         // GUI INTERAKCIA
@@ -243,7 +250,7 @@ int main() {
             gui.applyChanges = false;
         }
         
-        // FOLLOW – VÝBER ČASTICE MYŠOU
+        // FOLLOW – VÝBER MYŠOU
         auto& interaction = renderer.getInteraction();
         
         if (interaction.leftMouseDown && gui.selectedTool == 5) {
@@ -293,7 +300,7 @@ int main() {
         
         renderer.render(engine.get_positions(), engine.get_particle_count());
         
-        // GUI
+        // GUI – VŠETKO V RÁMCI FRAME
         SimulationStats stats;
         stats.particleCount = engine.get_particle_count();
         stats.simulationTime = engine.getTime();
@@ -303,6 +310,18 @@ int main() {
         
         gui.newFrame();
         gui.update(stats);
+        
+        // ============================================================
+        // OVLÁDANIE POČTU ČASTÍC (TERAZ SPRÁVNE V GUI FRAME)
+        // ============================================================
+        ImGui::Begin("Particle Controls");
+        ImGui::SliderInt("Particle Count", &newParticleCount, 100, 20000, "%d");
+        if (ImGui::Button("Reset Particles")) {
+            std::cout << "🔄 Reset particles to " << newParticleCount << std::endl;
+        }
+        ImGui::End();
+        
+        gui.drawParticleInspector();
         gui.render();
         
         frame++;

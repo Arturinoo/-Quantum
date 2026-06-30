@@ -67,8 +67,11 @@ public:
     void updateCamera(const float* positions, int count);
     
     // ============================================================
-    // NOVÁ FUNKCIA – pre follow
+    // GETTERY – SPRÁVNE UMESTNENÉ V PUBLIC
     // ============================================================
+    glm::vec3 getCameraPos() const { return cameraPos; }
+    glm::vec3 getCameraTarget() const { return cameraTarget; }
+    
     void setCameraTarget(float x, float y, float z);
     
     InteractionState& getInteraction() { return interaction; }

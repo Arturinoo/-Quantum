@@ -1,0 +1,847 @@
+.
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── ORIG_HEAD
+│   ├── branches
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── main
+│   │       └── remotes
+│   │           └── origin
+│   │               └── main
+│   ├── objects
+│   │   ├── 01
+│   │   │   ├── 54a4623b5fc546ee1ed8679ab4750ff3358911
+│   │   │   ├── c345f74863898b7f9296ee13af7fec6eccd712
+│   │   │   └── e138a3086c4745c6176add9ad914c3f0cbe9c4
+│   │   ├── 02
+│   │   │   └── 2d2384106808b10a4f1ba756f1d2f8173f4e95
+│   │   ├── 08
+│   │   │   ├── a7b21550b6b919782cee5d84a8fa1398c95f32
+│   │   │   └── db66fe704c5929aff8cf7bcf1bb881d879d769
+│   │   ├── 0a
+│   │   │   └── 0f4804e0c63b26fcd6a2ded2d9df9267fc1cea
+│   │   ├── 0d
+│   │   │   └── 7667b2f121fe4766bcbbe1fc766341fe800cd9
+│   │   ├── 11
+│   │   │   └── 472bdd571b07871711f09e179a6e90003761aa
+│   │   ├── 12
+│   │   │   ├── 4c05eae9a71ef016d790be51f7f7648a6014e8
+│   │   │   └── afbe7677845975f78b62b9d3d2ecd89a7ffc9b
+│   │   ├── 1a
+│   │   │   └── 68be06c5aca62830fdc335d974d26cedfa1811
+│   │   ├── 1b
+│   │   │   ├── 298914c443fea4d9f7fe6ded83e6c56fc8a8de
+│   │   │   └── d30066616a9b3477a246da8f711628967da090
+│   │   ├── 1c
+│   │   │   └── fd24d089c9c5549bdb1e0ba6d7baffec1fdc8c
+│   │   ├── 1d
+│   │   │   ├── 3e50d83e358480bcb8191cf493adf48bd6cce4
+│   │   │   └── c84e3e220de698462222bf53f651d61a03da97
+│   │   ├── 1f
+│   │   │   └── e10d00941fb795847d4203939c9d3cd993b59d
+│   │   ├── 20
+│   │   │   ├── abca4edc660b3a3b3e420b4d7cf8b7749ad76e
+│   │   │   └── bf38eb57377fd31e774f806dca9ae0fd7903fd
+│   │   ├── 22
+│   │   │   └── fe07633812cf9a2a9e0882d542f3377665a048
+│   │   ├── 24
+│   │   │   └── 325d1ac3901d16da9b65393eb995e3bf2e63b7
+│   │   ├── 26
+│   │   │   └── 1ac7bc727deb74732b759ea2b73084c619a64a
+│   │   ├── 29
+│   │   │   └── f6268ea6d1dae8eb9e3db3cbdf173a900b5979
+│   │   ├── 2a
+│   │   │   └── 6bbaafd0847d099702b136eb0c06c08eada65f
+│   │   ├── 2b
+│   │   │   └── c25623b971d24a3dd129f4be7ddf0655b10574
+│   │   ├── 2e
+│   │   │   ├── b35a9ad20c00e79f5794fe1e964941c93f15d9
+│   │   │   └── be7e6ab7c5a474ab073ef218e07966ff2a860a
+│   │   ├── 31
+│   │   │   ├── 969d0ceee92d0935c84b05363498590ecd7acd
+│   │   │   └── fb9a242ca7293ae07573e23f71d25fa08abb9f
+│   │   ├── 33
+│   │   │   └── 0d57f82c84204aae1d93c7f1f5d159e0240533
+│   │   ├── 34
+│   │   │   ├── 322e4d25624bbc733848858031a24d51d31e2d
+│   │   │   └── 465bd297a3bada8d6502ecbf846faa2c743233
+│   │   ├── 35
+│   │   │   └── 5dfe04806696ce639cc2e4d894bbfe353879eb
+│   │   ├── 38
+│   │   │   └── bb1c7c464a4732ce99987d97ad8429fa40c362
+│   │   ├── 3d
+│   │   │   └── ccd731726d7faa8b29d8d7dba3b981a53ca497
+│   │   ├── 3f
+│   │   │   └── f00a05167fb5e81bcac6ee5ac914ff85e111dd
+│   │   ├── 41
+│   │   │   └── dc2fae27207ad1595065712c5378abfa02bcd7
+│   │   ├── 42
+│   │   │   └── c992495c2ba4109a6e63f8ed5dda3a006fde9b
+│   │   ├── 43
+│   │   │   └── 01cee1f95ea0bfd3336ef3e0c36383e19f0021
+│   │   ├── 44
+│   │   │   └── f429dc8a94dc56d98077148b1c7156dd1f18a4
+│   │   ├── 46
+│   │   │   └── 11737f08fa378420d68196d0d8dedb80d66685
+│   │   ├── 47
+│   │   │   ├── 93d67ca982421175a5149188fca2a71f104212
+│   │   │   └── b670f33f45fecd02535568c6b22902ee70d9be
+│   │   ├── 48
+│   │   │   └── da4938b516b78967d99d40b2d037a16eb5b948
+│   │   ├── 49
+│   │   │   └── 5643d948f98e64a7ae0a5164831ac8566be9fa
+│   │   ├── 4a
+│   │   │   └── 68ff4a85cfbbfc546e21c57ec01f06ad5d2cab
+│   │   ├── 4e
+│   │   │   └── c47790b92b9bd2c22430d11ebff42645190ee6
+│   │   ├── 4f
+│   │   │   ├── 1f5ad6471668a11f2fd6dd213a178c2f069395
+│   │   │   └── 659c38f356e297dd5e953a5a56a34d9050be12
+│   │   ├── 51
+│   │   │   └── e61b3035197ee6f767c8df32e66799fc112b1b
+│   │   ├── 54
+│   │   │   └── 5e1ed111c25a5d4dfab32015c499ebf0fcfe24
+│   │   ├── 55
+│   │   │   └── 022634bced975371acc1672d94ce72ca339839
+│   │   ├── 56
+│   │   │   └── 875b303fbfd240b620b4e9047ce119c7f0d96a
+│   │   ├── 57
+│   │   │   ├── 7569b01f46c8f352d81734c672afd13eec173e
+│   │   │   └── cde2865b3c0f689d8d542e3ad4648487d8ce70
+│   │   ├── 58
+│   │   │   └── 3508f0b603d310eed047572df5dfac61351787
+│   │   ├── 59
+│   │   │   └── eea081852e633b6301a9810c1c325502002156
+│   │   ├── 5b
+│   │   │   ├── 72566e5acef8f6a9fb5a65d6b3b816e4248072
+│   │   │   ├── c48ea3b0d8ef8e367b13c013cb00fad12de57e
+│   │   │   └── e1d2dec3077530bd69743c086803da9fedf9e5
+│   │   ├── 5c
+│   │   │   └── 2c85c57b63e673bc8f6620e1860760d85653e1
+│   │   ├── 5d
+│   │   │   └── b4a7772943013e75cf9a5eb48a418411375366
+│   │   ├── 5e
+│   │   │   └── da013742caf5df5ca6d40fba2edfb2ed253209
+│   │   ├── 5f
+│   │   │   └── 9f67102d0058f52b4ad7b92403a715d41c9df3
+│   │   ├── 63
+│   │   │   ├── 1c9ac47e35575c396fa010d9b7b9df90165656
+│   │   │   └── 2c0acd1af918777be39bcc513ac9a6f9b3b421
+│   │   ├── 65
+│   │   │   ├── 735f955ea185eff442116d3eb19b3546c330d5
+│   │   │   └── a8184c502dc761daa8311444d423484693efc7
+│   │   ├── 68
+│   │   │   └── 35b22737d91024c73458a6a7df17879d746634
+│   │   ├── 69
+│   │   │   ├── 47631147b9e954da8a62f418ef2fe68bc521d2
+│   │   │   └── 8cab9249dd4cabb528547267f096cd9088f871
+│   │   ├── 6c
+│   │   │   └── 3fd0d91fcffceed02ff4475656e78b56c9eb8a
+│   │   ├── 6d
+│   │   │   ├── 3d709fe4c8d1743cf55d046b40d7e3ae0ebee2
+│   │   │   ├── 3f654a87fdac6d1959a3b919613544a967418d
+│   │   │   └── ef80855d241d6e994e0819b4537599050fb6d6
+│   │   ├── 6e
+│   │   │   └── f223cd6d062d0d3e17c816863e08af4b5eb02e
+│   │   ├── 6f
+│   │   │   └── 68f4a4dc2b918fdca59521b3d425010ee5507e
+│   │   ├── 71
+│   │   │   └── 6033550b8c84d2fe11e3f1c2e5f616a67e06a3
+│   │   ├── 77
+│   │   │   └── 4dd0fe4a7c886a499ff26f3eb4c8021ce2d4d5
+│   │   ├── 79
+│   │   │   └── 29ff078637bed8e9f37e0f0b8b09e7567a0510
+│   │   ├── 7a
+│   │   │   └── 34a99f39f8e0d0c19cdd376325324fe815eb9c
+│   │   ├── 7b
+│   │   │   └── 4d68d70fcae134d5348f5e118f5e9c9d3f05f6
+│   │   ├── 7e
+│   │   │   ├── d8b67f74b61d937253994d6ec14bdf1772a691
+│   │   │   └── f26ada287b2938bcf6cbe22bdb87a2bb197446
+│   │   ├── 7f
+│   │   │   └── 07a5439600390e9c4a5415ddf8a5af87ce9ef9
+│   │   ├── 80
+│   │   │   └── 43c57aa119c3ab660007df2e2829e6eb598db7
+│   │   ├── 84
+│   │   │   └── 3a825a22bc2f939c970b72e6d74d00b6d49103
+│   │   ├── 85
+│   │   │   └── 1a44b1b35d8d47e10b6b683383587acd578de4
+│   │   ├── 86
+│   │   │   └── 229514e1b00c183c9236bcb3ab33dc73a8bc85
+│   │   ├── 87
+│   │   │   ├── 3884225aaadb81fd09dd27debdb61a3c476767
+│   │   │   └── 9e881050af7f8c6231e12e20ea2adeb6549de4
+│   │   ├── 88
+│   │   │   ├── 11dbf7d65047632b27a38bfa3b3145d34a1cf6
+│   │   │   ├── 656238b5fc2bec859a665c9b2336d6b1eb7657
+│   │   │   └── fa64aca5f31d11c2c5d83afabb414390608f41
+│   │   ├── 89
+│   │   │   ├── 4a93f04f4e6cd3d8a5c2b5c0b0a38a7df94414
+│   │   │   └── f62ed38b2c947c4f0e193469164f0edc908d2c
+│   │   ├── 8a
+│   │   │   └── 855801936e77099d097800e55d220f286cad3b
+│   │   ├── 8c
+│   │   │   └── 7ae9b3c4923aa470335bbd3e837666cbf41d99
+│   │   ├── 8f
+│   │   │   ├── 004deb61e96072f5e6928893f7e2347dabc2db
+│   │   │   └── 45cbde994fe6593439c9ae65a6105a2f91e456
+│   │   ├── 90
+│   │   │   └── ccf29c77b3bb39e1e1027b7ee7351fbe64b430
+│   │   ├── 92
+│   │   │   ├── b23eebe0f77081c12512832b81d39f320cb70a
+│   │   │   └── c1a7a429128f55fe593616a6298517cba92fce
+│   │   ├── 93
+│   │   │   └── 6db3dd06df498ca24858835120618c6dfb8dca
+│   │   ├── 94
+│   │   │   └── 9cba6c521330af12d7344e140b64ca1335b184
+│   │   ├── 95
+│   │   │   └── 16e85049000c176c1b4911a92c36472d124e29
+│   │   ├── 96
+│   │   │   └── 03ac58619ed01feb14a848bee12274355ebcb6
+│   │   ├── 9c
+│   │   │   └── 9c90eaffe6bb0799f322938350b76c08c676dc
+│   │   ├── 9d
+│   │   │   ├── 38714480116778a7562390048bc00ba76e2762
+│   │   │   └── 541cef92234484e5227f9908fd0b14219bd94a
+│   │   ├── 9f
+│   │   │   └── 7edd8d0c4aae51e99a839c048eb7e5a3559fdd
+│   │   ├── a0
+│   │   │   └── 5ee98bfa4160171a90308dec821cff2ef71baa
+│   │   ├── a1
+│   │   │   └── 347de13d6ec4b0dee6c8606792814e20eb0ef3
+│   │   ├── a2
+│   │   │   └── 7607d8d21854990c9ee74c3ae8f92a89380a3f
+│   │   ├── a3
+│   │   │   ├── 09feb3f4faede9dd49c4d6c47e547c07da36d6
+│   │   │   └── 8817a560bcd0c20dc23b88f521974bfa853f9c
+│   │   ├── a6
+│   │   │   └── 593552987ea7f38f9ebe32be7657704da25a44
+│   │   ├── a8
+│   │   │   ├── 725db0ad7249e3683fdfb628b73aa487961fc2
+│   │   │   └── 73f83d534eb1282b005768d3eba030f1cd45cc
+│   │   ├── a9
+│   │   │   └── c4cce3baa42d6f0957515b87471e8f3820cf92
+│   │   ├── ac
+│   │   │   └── b15790ef12f7dfc091dee332f1f71a500fe691
+│   │   ├── ad
+│   │   │   └── 089213096115f070b52e0a3e554f3cbcd30f2d
+│   │   ├── af
+│   │   │   ├── 69ecb283315f5d9e6537ba2a84b83fc2d08f46
+│   │   │   └── f84349bcbf82a6ce759ef9e6f984a2098218d5
+│   │   ├── b0
+│   │   │   ├── 447479d86f1271fe94dae2ff0bd51cb45c62dc
+│   │   │   └── cef2e82fb3351805960946764a0ca2738ca540
+│   │   ├── b1
+│   │   │   ├── 49057af996e82d52dbaa2cfa520bc9a212a3f3
+│   │   │   └── 4abbdf6d6425418ab48aa4274531f1c4cc28b6
+│   │   ├── b4
+│   │   │   └── 97c8ad662173b535d8e9d32de8674b79299332
+│   │   ├── b6
+│   │   │   └── a7d89c68e0ca66e96a9a51892cc33db66fb8a3
+│   │   ├── b7
+│   │   │   └── 1304f254d9f255133c4b30ccb7fb6cc59815eb
+│   │   ├── b9
+│   │   │   └── 5f8701c2b711447954d1cdfa31b79225bc084c
+│   │   ├── bb
+│   │   │   └── e5d8bca883849fb17f1095e05b36367b1c7f92
+│   │   ├── bf
+│   │   │   └── 71d6a32cf5eb583e7f31b3742cb6c3004a6c71
+│   │   ├── c3
+│   │   │   ├── b840a10ffe24a703dfed8fa3752b109657e5e9
+│   │   │   └── f34b14cdd4d7873ad0c9b214d47691f10a2013
+│   │   ├── c5
+│   │   │   └── c8546375a86a2d0d870b586bfcf31d70a59226
+│   │   ├── c6
+│   │   │   └── 810e3754aa3f6de2b01f64036aa9a066d4b4bd
+│   │   ├── c8
+│   │   │   └── 458eba17f1bcebfa9058fb2da007daa9e50363
+│   │   ├── cd
+│   │   │   └── 06620e9cca1a95aada33113a5c39a466562e5a
+│   │   ├── d0
+│   │   │   ├── 0b395bed900cbfa15a24e06b107661f86c5487
+│   │   │   ├── 517485cedb6874a02a202d9b2a16bc272c365c
+│   │   │   └── e3c4a50d8ca67f7da69fb18385e2188d96c28c
+│   │   ├── d3
+│   │   │   ├── 364a74e9306897feb7c6eee526dac6a5662ec3
+│   │   │   └── c7002a5823ae8927ea1fe2a30075b1b0c80d8c
+│   │   ├── d5
+│   │   │   ├── 20349482ea7e0b67209a9a07baac3d5a9c09e5
+│   │   │   └── e5fec579364a62db2b7d87f6c60c29d5ebc93e
+│   │   ├── d9
+│   │   │   └── bb567fa1c50b295e93e8165d6f8d3fa92e7f6f
+│   │   ├── da
+│   │   │   └── e46d1b0deb3d72205d77a85c1fe14095118021
+│   │   ├── db
+│   │   │   └── e102e56bd4c5e7fcf1fa3e312102454b6f3ed0
+│   │   ├── dc
+│   │   │   └── 4cd76727dc6405fe89b9d88430711e8fe362d5
+│   │   ├── dd
+│   │   │   └── b239bb39144f28127ea2552dfeebdb65b34978
+│   │   ├── df
+│   │   │   ├── 4a61ad0c9b1248e3787e172c8b5aa76075f523
+│   │   │   ├── 93e09fd97d10fe28d520cc32a741411effdde7
+│   │   │   └── f91716d9b7c43a5c31eec570ef27f0e5070d15
+│   │   ├── e0
+│   │   │   └── ea3540c445d96c45edf22793cfdf9e7c32e158
+│   │   ├── e2
+│   │   │   ├── 01b20070caabe09fda430d93ad1136eff17585
+│   │   │   └── bb747d8465e3104904978f6baffa907a3a0bc5
+│   │   ├── e3
+│   │   │   ├── 12958717d591a537bd58d7c059664c02e28331
+│   │   │   ├── e826a1f622522316fca1260f4b7815e788c833
+│   │   │   └── f848c7afd61ef1c92a10f26c0f4570bb2e7385
+│   │   ├── e5
+│   │   │   └── 4e1039d9c58ffd129b4570804a2d36dc23acb6
+│   │   ├── e7
+│   │   │   ├── 7db7131b9562db50b66f1eb78610b88c447bcc
+│   │   │   └── f2458ad18ea621fb7b5d951d820de30a1fe407
+│   │   ├── e8
+│   │   │   └── a5ba35c4984fa17839e47d922c738ab15f4710
+│   │   ├── e9
+│   │   │   ├── 26ed95aca95fa7a394ccb140ffe97fb42360fe
+│   │   │   └── e508f0dcb1a456a7ed0b27f8e54c622d58cb69
+│   │   ├── ea
+│   │   │   └── 10e285f756b8e3cdcb13b383713f71cbe94341
+│   │   ├── eb
+│   │   │   └── d71ede8c662e31edcb5f2dd3b2b4c4ea99b63c
+│   │   ├── ec
+│   │   │   └── 4d42c7dc55ce71aac39fe20d61dcf724855dfd
+│   │   ├── ef
+│   │   │   ├── be5dc3d86315c1cb6e837e622831cbfe9665c7
+│   │   │   └── e5bf52b8d8b7d73cd72bc2c91769dcd1e5d808
+│   │   ├── f5
+│   │   │   └── 5e8ba251b43d251017beca0d76d88d2785c9e1
+│   │   ├── f6
+│   │   │   ├── 4a42c9dff7950c2509651f9000a958a95d7c08
+│   │   │   ├── 4b5814fa34609eb3614279efc2a47ddcc8c345
+│   │   │   ├── 511ff0ee67344f73d3f568eb60ed5558180a12
+│   │   │   └── fb61dcd6b3bf32b5e91cf7d9100e79af4e1eee
+│   │   ├── f8
+│   │   │   └── 3715dddf3b43f8d042d6fe03e61213e75721b1
+│   │   ├── f9
+│   │   │   ├── 0ef557ccfaddf4438e28f6dd78638d965dd684
+│   │   │   └── 7b37dd810cd2c4c8c19de577bf5979d71f6fcb
+│   │   ├── fd
+│   │   │   └── c24d7163a368138f0e3ba91234d3b3d6c6d0cf
+│   │   ├── fe
+│   │   │   └── 0870d3d94e47fc392335f61aebc6cc48a344e4
+│   │   ├── ff
+│   │   │   ├── 7ebbb3e0a0aca133641d25b82c4f96acf25651
+│   │   │   └── cd59dd7d01f7e28f2adbd11490b2736da2d67e
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       │   └── main
+│       ├── remotes
+│       │   └── origin
+│       │       └── main
+│       └── tags
+├── .gitignore
+├── .vscode
+│   ├── settings.json
+│   └── tasks.json
+├── CMakeLists.txt
+├── CMakeLists_MinGW.txt
+├── Makefile
+├── README.md
+├── bindings
+├── build.sh
+├── build_manual
+│   ├── classical.o
+│   ├── engine.o
+│   ├── hybrid.o
+│   ├── imgui.ini
+│   ├── imgui.o
+│   ├── imgui_demo.o
+│   ├── imgui_draw.o
+│   ├── imgui_impl_glfw.o
+│   ├── imgui_impl_opengl3.o
+│   ├── imgui_renderer.o
+│   ├── imgui_tables.o
+│   ├── imgui_widgets.o
+│   ├── main.o
+│   ├── nbody_cuda.o
+│   ├── opengl_renderer.o
+│   ├── quantum_engine
+│   └── quantum_engine.o
+├── classical
+├── configs
+│   └── default.yaml
+├── core
+├── data
+├── docs
+├── examples
+├── external
+│   └── imgui
+│       ├── .editorconfig
+│       ├── .git
+│       │   ├── HEAD
+│       │   ├── branches
+│       │   ├── config
+│       │   ├── description
+│       │   ├── hooks
+│       │   │   ├── applypatch-msg.sample
+│       │   │   ├── commit-msg.sample
+│       │   │   ├── fsmonitor-watchman.sample
+│       │   │   ├── post-update.sample
+│       │   │   ├── pre-applypatch.sample
+│       │   │   ├── pre-commit.sample
+│       │   │   ├── pre-merge-commit.sample
+│       │   │   ├── pre-push.sample
+│       │   │   ├── pre-rebase.sample
+│       │   │   ├── pre-receive.sample
+│       │   │   ├── prepare-commit-msg.sample
+│       │   │   ├── push-to-checkout.sample
+│       │   │   ├── sendemail-validate.sample
+│       │   │   └── update.sample
+│       │   ├── index
+│       │   ├── info
+│       │   │   └── exclude
+│       │   ├── logs
+│       │   │   ├── HEAD
+│       │   │   └── refs
+│       │   │       ├── heads
+│       │   │       │   └── master
+│       │   │       └── remotes
+│       │   │           └── origin
+│       │   │               └── HEAD
+│       │   ├── objects
+│       │   │   ├── info
+│       │   │   └── pack
+│       │   │       ├── pack-8eb2b7404f8434290719810b0b49ff0bf30dd111.idx
+│       │   │       ├── pack-8eb2b7404f8434290719810b0b49ff0bf30dd111.pack
+│       │   │       └── pack-8eb2b7404f8434290719810b0b49ff0bf30dd111.rev
+│       │   ├── packed-refs
+│       │   └── refs
+│       │       ├── heads
+│       │       │   └── master
+│       │       ├── remotes
+│       │       │   └── origin
+│       │       │       └── HEAD
+│       │       └── tags
+│       ├── .gitattributes
+│       ├── .github
+│       │   ├── FUNDING.yml
+│       │   ├── ISSUE_TEMPLATE
+│       │   │   ├── config.yml
+│       │   │   └── issue_template.yml
+│       │   ├── pull_request_template.md
+│       │   └── workflows
+│       │       ├── build.yml
+│       │       ├── build_windows_vulkan_libs.ps1
+│       │       ├── manual.yml
+│       │       ├── scheduled.yml
+│       │       └── static-analysis.yml
+│       ├── .gitignore
+│       ├── LICENSE.txt
+│       ├── backends
+│       │   ├── imgui_impl_allegro5.cpp
+│       │   ├── imgui_impl_allegro5.h
+│       │   ├── imgui_impl_android.cpp
+│       │   ├── imgui_impl_android.h
+│       │   ├── imgui_impl_dx10.cpp
+│       │   ├── imgui_impl_dx10.h
+│       │   ├── imgui_impl_dx11.cpp
+│       │   ├── imgui_impl_dx11.h
+│       │   ├── imgui_impl_dx12.cpp
+│       │   ├── imgui_impl_dx12.h
+│       │   ├── imgui_impl_dx9.cpp
+│       │   ├── imgui_impl_dx9.h
+│       │   ├── imgui_impl_glfw.cpp
+│       │   ├── imgui_impl_glfw.h
+│       │   ├── imgui_impl_glut.cpp
+│       │   ├── imgui_impl_glut.h
+│       │   ├── imgui_impl_metal.h
+│       │   ├── imgui_impl_metal.mm
+│       │   ├── imgui_impl_null.cpp
+│       │   ├── imgui_impl_null.h
+│       │   ├── imgui_impl_opengl2.cpp
+│       │   ├── imgui_impl_opengl2.h
+│       │   ├── imgui_impl_opengl3.cpp
+│       │   ├── imgui_impl_opengl3.h
+│       │   ├── imgui_impl_opengl3_loader.h
+│       │   ├── imgui_impl_osx.h
+│       │   ├── imgui_impl_osx.mm
+│       │   ├── imgui_impl_sdl2.cpp
+│       │   ├── imgui_impl_sdl2.h
+│       │   ├── imgui_impl_sdl3.cpp
+│       │   ├── imgui_impl_sdl3.h
+│       │   ├── imgui_impl_sdlgpu3.cpp
+│       │   ├── imgui_impl_sdlgpu3.h
+│       │   ├── imgui_impl_sdlgpu3_shaders.h
+│       │   ├── imgui_impl_sdlrenderer2.cpp
+│       │   ├── imgui_impl_sdlrenderer2.h
+│       │   ├── imgui_impl_sdlrenderer3.cpp
+│       │   ├── imgui_impl_sdlrenderer3.h
+│       │   ├── imgui_impl_vulkan.cpp
+│       │   ├── imgui_impl_vulkan.h
+│       │   ├── imgui_impl_wgpu.cpp
+│       │   ├── imgui_impl_wgpu.h
+│       │   ├── imgui_impl_win32.cpp
+│       │   ├── imgui_impl_win32.h
+│       │   ├── sdlgpu3
+│       │   │   ├── build_instructions.txt
+│       │   │   ├── shader.frag
+│       │   │   └── shader.vert
+│       │   └── vulkan
+│       │       ├── build_instructions.txt
+│       │       ├── generate_spv.sh
+│       │       ├── glsl_shader.frag
+│       │       └── glsl_shader.vert
+│       ├── docs
+│       │   ├── BACKENDS.md
+│       │   ├── CHANGELOG.txt
+│       │   ├── CONTRIBUTING.md
+│       │   ├── EXAMPLES.md
+│       │   ├── FAQ.md
+│       │   ├── FONTS.md
+│       │   ├── README.md
+│       │   ├── SECURITY.md
+│       │   └── TODO.txt
+│       ├── examples
+│       │   ├── README.txt
+│       │   ├── example_allegro5
+│       │   │   ├── README.md
+│       │   │   ├── example_allegro5.vcxproj
+│       │   │   ├── example_allegro5.vcxproj.filters
+│       │   │   ├── imconfig_allegro5.h
+│       │   │   └── main.cpp
+│       │   ├── example_android_opengl3
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── android
+│       │   │   │   ├── .gitignore
+│       │   │   │   ├── app
+│       │   │   │   │   ├── build.gradle
+│       │   │   │   │   └── src
+│       │   │   │   │       └── main
+│       │   │   │   │           ├── AndroidManifest.xml
+│       │   │   │   │           └── java
+│       │   │   │   │               └── MainActivity.kt
+│       │   │   │   ├── build.gradle
+│       │   │   │   ├── gradle
+│       │   │   │   │   └── libs.versions.toml
+│       │   │   │   └── settings.gradle
+│       │   │   └── main.cpp
+│       │   ├── example_apple_metal
+│       │   │   ├── Makefile
+│       │   │   ├── README.md
+│       │   │   ├── example_apple_metal.xcodeproj
+│       │   │   │   └── project.pbxproj
+│       │   │   ├── iOS
+│       │   │   │   ├── Info-iOS.plist
+│       │   │   │   └── LaunchScreen.storyboard
+│       │   │   ├── macOS
+│       │   │   │   ├── Info-macOS.plist
+│       │   │   │   └── MainMenu.storyboard
+│       │   │   └── main.mm
+│       │   ├── example_apple_opengl2
+│       │   │   ├── Makefile
+│       │   │   ├── example_apple_opengl2.xcodeproj
+│       │   │   │   └── project.pbxproj
+│       │   │   └── main.mm
+│       │   ├── example_glfw_metal
+│       │   │   ├── Makefile
+│       │   │   └── main.mm
+│       │   ├── example_glfw_opengl2
+│       │   │   ├── Makefile
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_glfw_opengl2.vcxproj
+│       │   │   ├── example_glfw_opengl2.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_glfw_opengl3
+│       │   │   ├── Makefile
+│       │   │   ├── Makefile.emscripten
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_glfw_opengl3.vcxproj
+│       │   │   ├── example_glfw_opengl3.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_glfw_vulkan
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── Makefile
+│       │   │   ├── build_win32.bat
+│       │   │   ├── build_win64.bat
+│       │   │   ├── example_glfw_vulkan.vcxproj
+│       │   │   ├── example_glfw_vulkan.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_glfw_wgpu
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── Makefile.emscripten
+│       │   │   ├── README.md
+│       │   │   └── main.cpp
+│       │   ├── example_glut_opengl2
+│       │   │   ├── Makefile
+│       │   │   ├── example_glut_opengl2.vcxproj
+│       │   │   ├── example_glut_opengl2.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_null
+│       │   │   ├── Makefile
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_null.vcxproj
+│       │   │   ├── example_null.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl2_directx11
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_sdl2_directx11.vcxproj
+│       │   │   ├── example_sdl2_directx11.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl2_metal
+│       │   │   ├── Makefile
+│       │   │   └── main.mm
+│       │   ├── example_sdl2_opengl2
+│       │   │   ├── Makefile
+│       │   │   ├── README.md
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_sdl2_opengl2.vcxproj
+│       │   │   ├── example_sdl2_opengl2.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl2_opengl3
+│       │   │   ├── Makefile
+│       │   │   ├── Makefile.emscripten
+│       │   │   ├── README.md
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_sdl2_opengl3.vcxproj
+│       │   │   ├── example_sdl2_opengl3.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl2_sdlrenderer2
+│       │   │   ├── Makefile
+│       │   │   ├── README.md
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_sdl2_sdlrenderer2.vcxproj
+│       │   │   ├── example_sdl2_sdlrenderer2.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl2_vulkan
+│       │   │   ├── Makefile
+│       │   │   ├── build_win32.bat
+│       │   │   ├── build_win64.bat
+│       │   │   ├── example_sdl2_vulkan.vcxproj
+│       │   │   ├── example_sdl2_vulkan.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl2_wgpu
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── Makefile.emscripten
+│       │   │   ├── README.md
+│       │   │   └── main.cpp
+│       │   ├── example_sdl3_directx11
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_sdl3_directx11.vcxproj
+│       │   │   ├── example_sdl3_directx11.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl3_metal
+│       │   │   ├── Makefile
+│       │   │   └── main.mm
+│       │   ├── example_sdl3_opengl3
+│       │   │   ├── Makefile
+│       │   │   ├── Makefile.emscripten
+│       │   │   ├── README.md
+│       │   │   ├── build_win32.bat
+│       │   │   ├── build_win64.bat
+│       │   │   ├── example_sdl3_opengl3.vcxproj
+│       │   │   ├── example_sdl3_opengl3.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl3_sdlgpu3
+│       │   │   ├── Makefile
+│       │   │   ├── build_win64.bat
+│       │   │   ├── example_sdl3_sdlgpu3.vcxproj
+│       │   │   ├── example_sdl3_sdlgpu3.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl3_sdlrenderer3
+│       │   │   ├── Makefile
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_sdl3_sdlrenderer3.vcxproj
+│       │   │   ├── example_sdl3_sdlrenderer3.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl3_vulkan
+│       │   │   ├── Makefile
+│       │   │   ├── build_win32.bat
+│       │   │   ├── build_win64.bat
+│       │   │   ├── example_sdl3_vulkan.vcxproj
+│       │   │   ├── example_sdl3_vulkan.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_sdl3_wgpu
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── Makefile.emscripten
+│       │   │   ├── README.md
+│       │   │   └── main.cpp
+│       │   ├── example_win32_directx10
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_win32_directx10.vcxproj
+│       │   │   ├── example_win32_directx10.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_win32_directx11
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_win32_directx11.vcxproj
+│       │   │   ├── example_win32_directx11.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_win32_directx12
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_win32_directx12.vcxproj
+│       │   │   ├── example_win32_directx12.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_win32_directx9
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_win32_directx9.vcxproj
+│       │   │   ├── example_win32_directx9.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_win32_opengl3
+│       │   │   ├── build_mingw.bat
+│       │   │   ├── build_win32.bat
+│       │   │   ├── example_win32_opengl3.vcxproj
+│       │   │   ├── example_win32_opengl3.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── example_win32_vulkan
+│       │   │   ├── build_win32.bat
+│       │   │   ├── build_win64.bat
+│       │   │   ├── example_win32_vulkan.vcxproj
+│       │   │   ├── example_win32_vulkan.vcxproj.filters
+│       │   │   └── main.cpp
+│       │   ├── imgui_examples.sln
+│       │   └── libs
+│       │       ├── emscripten
+│       │       │   ├── emscripten_mainloop_stub.h
+│       │       │   └── shell_minimal.html
+│       │       ├── glfw
+│       │       │   ├── COPYING.txt
+│       │       │   ├── include
+│       │       │   │   └── GLFW
+│       │       │   │       ├── glfw3.h
+│       │       │   │       └── glfw3native.h
+│       │       │   ├── lib-vc2010-32
+│       │       │   │   └── glfw3.lib
+│       │       │   └── lib-vc2010-64
+│       │       │       └── glfw3.lib
+│       │       └── usynergy
+│       │           ├── README.txt
+│       │           ├── uSynergy.c
+│       │           └── uSynergy.h
+│       ├── imconfig.h
+│       ├── imgui.cpp
+│       ├── imgui.h
+│       ├── imgui_demo.cpp
+│       ├── imgui_draw.cpp
+│       ├── imgui_impl_glfw.cpp
+│       ├── imgui_impl_glfw.h
+│       ├── imgui_impl_opengl3.cpp
+│       ├── imgui_impl_opengl3.h
+│       ├── imgui_impl_opengl3_loader.h
+│       ├── imgui_impl_opengl3_loader.h.1
+│       ├── imgui_internal.h
+│       ├── imgui_tables.cpp
+│       ├── imgui_widgets.cpp
+│       ├── imstb_rectpack.h
+│       ├── imstb_textedit.h
+│       ├── imstb_truetype.h
+│       └── misc
+│           ├── README.txt
+│           ├── cpp
+│           │   ├── README.txt
+│           │   ├── imgui_stdlib.cpp
+│           │   └── imgui_stdlib.h
+│           ├── debuggers
+│           │   ├── README.txt
+│           │   ├── imgui.gdb
+│           │   ├── imgui.natstepfilter
+│           │   ├── imgui.natvis
+│           │   └── imgui_lldb.py
+│           ├── fonts
+│           │   ├── Cousine-Regular.ttf
+│           │   ├── DroidSans.ttf
+│           │   ├── Karla-Regular.ttf
+│           │   ├── ProggyClean.ttf
+│           │   ├── ProggyTiny.ttf
+│           │   ├── Roboto-Medium.ttf
+│           │   └── binary_to_compressed_c.cpp
+│           ├── freetype
+│           │   ├── README.md
+│           │   ├── imgui_freetype.cpp
+│           │   └── imgui_freetype.h
+│           └── single_file
+│               └── imgui_single_file.h
+├── hybrid
+├── imconfig.h
+├── imgui.cpp
+├── imgui.h
+├── imgui_demo.cpp
+├── imgui_draw.cpp
+├── imgui_internal.h
+├── imgui_tables.cpp
+├── imgui_widgets.cpp
+├── imstb_rectpack.h
+├── imstb_textedit.h
+├── imstb_truetype.h
+├── include
+│   └── quantum_engine
+│       └── api.h
+├── python
+│   ├── __init__.py
+│   ├── config.py
+│   ├── engine.py
+│   ├── examples
+│   │   └── basic_simulation.py
+│   ├── quantum_python.py
+│   └── visualization.py
+├── quantum
+├── quantum_engine
+├── requirements.txt
+├── scripts
+│   ├── build.sh
+│   └── run.sh
+├── src
+│   ├── bindings
+│   │   └── python_bindings.cpp
+│   ├── classical
+│   │   ├── classical_engine.cpp
+│   │   ├── classical_engine.h
+│   │   └── particle.h
+│   ├── core
+│   │   ├── constants.h
+│   │   ├── engine.cpp
+│   │   ├── engine.h
+│   │   └── types.h
+│   ├── hybrid
+│   │   ├── hybrid_engine.cpp
+│   │   └── hybrid_engine.h
+│   ├── main.cpp
+│   ├── quantum
+│   │   ├── nbody_cuda.cu
+│   │   ├── quantum_engine.cu
+│   │   ├── quantum_engine.h
+│   │   └── wavefunction.h
+│   └── visualization
+│       ├── imgui_renderer.cpp
+│       ├── imgui_renderer.h
+│       ├── opengl_renderer.cpp
+│       ├── opengl_renderer.h
+│       ├── renderer.cpp
+│       └── renderer.h
+├── struktura_projektu.txt
+├── tests
+│   └── run_tests.py
+└── visualization
+
+260 directories, 585 files

@@ -8,7 +8,7 @@
 #include <chrono>
 #include <deque>
 #include <cstring>
-#include <omp.h>  // OpenMP pre viac jadier
+#include <omp.h>
 
 extern "C" void run_cuda_nbody(void* particles, int N, float dt, float G, float softening);
 
@@ -161,7 +161,6 @@ public:
         std::uniform_real_distribution<float> height_dist(-0.8f, 0.8f);
         std::uniform_real_distribution<float> speed_dist(-0.03f, 0.03f);
         
-        // OpenMP pre paralelizáciu inicializácie
         #pragma omp parallel for
         for (int i = 0; i < count; i++) {
             float r = radius_dist(rng);
@@ -249,7 +248,6 @@ public:
         const float coupling = 0.3f;
         int N = particles.size();
         
-        // Kvantovy potencial (OpenMP)
         #pragma omp parallel for
         for (int i = 0; i < quantum.N; i++) {
             float x = quantum.x_min + i * quantum.dx;
@@ -274,7 +272,6 @@ public:
         
         quantum.step(effectiveDt * 0.3f);
         
-        // CPU verzia s OpenMP – preskočíme God Particle
         std::vector<float> ax(N), ay(N), az(N);
         
         #pragma omp parallel for
@@ -321,7 +318,6 @@ public:
                  particles[i].vz*particles[i].vz);
         }
         
-        // Ohranicenie – God Particle je výnimkou
         #pragma omp parallel for
         for (int i = 0; i < N; i++) {
             if (particles[i].isGodParticle) continue;
@@ -483,7 +479,7 @@ Engine::~Engine() { delete impl; }
 
 bool Engine::initialize() {
     std::cout << "\n🔧 Initializing hybrid engine (CUDA)..." << std::endl;
-    impl->init_particles(5000);  // Znížené na 5000 pre plynulosť
+    impl->init_particles(5000);
     std::cout << "✅ " << impl->get_count() << " particles created" << std::endl;
     std::cout << "✅ Quantum grid: " << 512 << " points" << std::endl;
     return true;
@@ -622,6 +618,9 @@ bool Engine::getParticleGod(int index) const {
     return impl->particles[index].isGodParticle;
 }
 
+// ============================================================
+// SETTERY PRE MANUAL OVERRIDE (SPRÁVNE V NAMESPACE)
+// ============================================================
 void Engine::setParticleMass(int index, float mass) {
     if (index < 0 || index >= (int)impl->particles.size()) return;
     impl->particles[index].mass = mass;
