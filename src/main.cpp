@@ -303,7 +303,6 @@ int main() {
         
         gui.newFrame();
         gui.update(stats);
-        gui.drawParticleInspector();  // <-- LEN RAZ!
         gui.render();
         
         frame++;
