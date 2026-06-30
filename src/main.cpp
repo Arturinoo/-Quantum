@@ -228,12 +228,12 @@ int main() {
             gui.inspectorEnergy = engine.getParticleEnergy(idx);
             gui.inspectorTemperature = engine.getParticleTemperature(idx);
             
-            gui.manualMass = gui.inspectorMass;
-            gui.manualCharge = gui.inspectorCharge;
-            gui.manualSpin = gui.inspectorSpin;
-            gui.manualVx = gui.inspectorVx;
-            gui.manualVy = gui.inspectorVy;
-            gui.manualVz = gui.inspectorVz;
+            // gui.manualMass = gui.inspectorMass; // ZAKAZANE - nechceme prepisovat manuálne hodnoty
+            // gui.manualCharge = gui.inspectorCharge; // ZAKAZANE
+            // gui.manualSpin = gui.inspectorSpin; // ZAKAZANE
+            // gui.manualVx = gui.inspectorVx; // ZAKAZANE
+            // gui.manualVy = gui.inspectorVy; // ZAKAZANE
+            // gui.manualVz = gui.inspectorVz; // ZAKAZANE
         }
         inspectorUpdateCounter++;
         

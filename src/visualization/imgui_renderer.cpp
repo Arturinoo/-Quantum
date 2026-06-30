@@ -110,7 +110,7 @@ float ImGuiRenderer::logSlider(float value, float minVal, float maxVal) {
     float logMin = log10(minVal);
     float logMax = log10(maxVal);
     float logVal = logMin + value * (logMax - logMin);
-    return pow(10.0f, logVal);
+    return pow(10000.0f, logVal);
 }
 
 float ImGuiRenderer::expSlider(float value, float minVal, float maxVal) {
@@ -219,7 +219,7 @@ void ImGuiRenderer::drawParticleInspector() {
         ImGui::Separator();
         ImGui::Text("✏️ Manual Override");
         
-        ImGui::SliderFloat("Mass", &manualMass, 0.1f, 10.0f, "%.2f");
+        ImGui::SliderFloat("Mass", &manualMass, 0.1f, 10000.0f, "%.2f");
         ImGui::SliderFloat("Charge", &manualCharge, -5.0f, 5.0f, "%.2f");
         ImGui::SliderFloat("Spin", &manualSpin, 0.0f, 2.0f, "%.2f");
         ImGui::SliderFloat("Vx", &manualVx, -5.0f, 5.0f, "%.2f");
@@ -393,7 +393,7 @@ void ImGuiRenderer::drawTimelinePanel() {
         
         ImGui::Separator();
         ImGui::SetNextItemWidth(400);
-        if (ImGui::SliderFloat("##TimeSlider", &timelinePosition, 0.0f, 10.0f, "%.9f s")) {
+        if (ImGui::SliderFloat("##TimeSlider", &timelinePosition, 0.0f, 10000.0f, "%.9f s")) {
         }
     }
     ImGui::End();
